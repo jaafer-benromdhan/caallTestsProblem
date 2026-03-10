@@ -1,0 +1,42 @@
+15:03:58:252       -------------------------------------------------------------------
+15:03:58:254                        STM32CubeProgrammer v2.21.0                  
+15:03:58:254       -------------------------------------------------------------------
+
+15:03:58:254 
+
+15:03:58:254 Log output file:   c:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\utils\logfiles\stlink_list.log
+15:03:58:254 Command line:  --list -log "c:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\utils\logfiles\stlink_list.log"
+15:03:58:254 
+15:03:58:256 =====  DFU Interface   =====
+15:03:58:266 
+15:03:58:266 No STM32 device in DFU mode connected
+15:03:58:266 
+15:03:58:266 ===== J-Link Interface =====
+15:03:58:270 No J-Link/flasher probe detected.
+15:03:58:270 ===== STLink Interface =====
+15:03:58:290 
+-------- Connected ST-LINK Probes List --------
+15:03:58:290 
+ST-Link Probe 0 :
+15:03:58:290    ST-LINK SN  : 0671FF34314B4E3043234043
+15:03:58:290    ST-LINK FW  : V2J40M27
+15:03:58:290    Access Port Number  : 1
+15:03:58:290    Board Name  : NUCLEO-L152RE
+15:03:58:290 -----------------------------------------------
+
+15:03:58:290 =====  UART Interface  =====
+15:03:58:294 
+Total number of serial ports available: 2
+
+15:03:58:310 Board Name  : NUCLEO-L152RE
+15:03:58:310 ST-LINK SN: 0671FF34314B4E3043234043
+15:03:58:310 Port: COM6
+15:03:58:310 Location: \\.\COM6
+15:03:58:310 Description: STMicroelectronics STLink Virtual COM Port
+15:03:58:310 Manufacturer: STMicroelectronics
+
+15:03:58:310 Port: COM1
+15:03:58:310 Location: \\.\COM1
+15:03:58:310 Description: Port de communication
+15:03:58:310 Manufacturer: (Types de port standard)
+
