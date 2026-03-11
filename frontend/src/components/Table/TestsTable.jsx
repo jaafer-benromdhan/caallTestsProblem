@@ -1,4 +1,4 @@
-export default function TestsTable({ boards, onRun }) {
+export default function TestsTable({ boardName, boards, onRun }) {
   if (!boards) return null;
 
   return (
@@ -28,9 +28,11 @@ export default function TestsTable({ boards, onRun }) {
               <td className="p-3">{t.mcu}</td>
               <td className="p-3">{t.interface}</td>
               <td className="p-3">{t.reset ? "Yes" : "No"}</td>
+
               <td className="p-3">
                 <button
-                  onClick={() => onRun(t)}
+                
+                  onClick={() => onRun(boardName, t.line_id)}
                   className="px-3 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md"
                 >
                   Run

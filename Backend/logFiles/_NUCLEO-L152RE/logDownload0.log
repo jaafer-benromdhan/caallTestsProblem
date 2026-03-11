@@ -1,0 +1,210 @@
+13:13:29:693       -------------------------------------------------------------------
+13:13:29:693                        STM32CubeProgrammer v2.21.0                  
+13:13:29:693       -------------------------------------------------------------------
+
+13:13:29:693 
+
+13:13:29:693 Log output file:   C:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\logFiles\_NUCLEO-L152RE\logDownload0.log
+13:13:29:693 Command line:  -c port=SWD sn=0671ff34314b4e3043234043 -d "Backend\TestFiles\32KB.bin" 0x08000000 -v -log "C:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\logFiles\_NUCLEO-L152RE\logDownload0.log"
+13:13:29:693 
+13:13:29:719 ST-LINK SN  : 0671FF34314B4E3043234043
+13:13:29:719 ST-LINK FW  : V2J40M27
+13:13:29:720 Board       : NUCLEO-L152RE
+13:13:29:721 Voltage     : 3.26V
+13:13:29:737 SWD freq    : 4000 KHz
+13:13:29:737 Connect mode: Normal
+13:13:29:737 Reset mode  : Software reset
+13:13:29:739 Device ID   : 0x437
+13:13:29:740 Revision ID : Rev Z
+13:13:29:741 flash loader C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/FlashLoader/0x437.stldr is loaded
+13:13:29:751 Device name : STM32L15xxE/STM32L162xE
+13:13:29:752 Reading data...
+13:13:29:752 r ap 0 @0x1FF800CC 0x00000004 bytes Data 0x00000200
+13:13:29:753 Flash size  : 512 KBytes
+13:13:29:753 Device type : MCU
+13:13:29:753 Device CPU  : Cortex-M3
+13:13:29:754 BL Version  : 0x40
+13:13:29:756 Debug in Low Power mode enabled
+13:13:29:756 
+13:13:29:758 
+
+13:13:29:758 Opening and parsing file: 32KB.bin
+13:13:29:763 
+
+13:13:29:763 Memory Programming ...
+13:13:29:763   File          : 32KB.bin
+13:13:29:764   Size          : 32.00 KB 
+13:13:29:764   Address       : 0x08000000
+13:13:29:764 
+
+13:13:29:765 Erasing Segment <0> Address <0x08000000> Size <32768>Bytes
+13:13:29:765 Erasing memory corresponding to segment 0:
+13:13:29:765 r ap 0 @0x40022040 0x00000004 bytes Data 0x10086437
+13:13:29:765 fail @0xFEEEFEEE
+13:13:29:767 Memory Erase via FlashLoader!
+13:13:29:767 Memory erase...
+13:13:29:769 halt ap 0 
+13:13:29:769 w ap 0 reg 15 PC   (0x20000000)  
+13:13:29:769 w ap 0 reg 17 MSP  (0x20000500)  
+13:13:29:769 w ap 0 reg 16 xPSR (0x01000000)  
+13:13:29:769 w ap 0 @0x20000C00 : 0x00000200 bytes, Data 0x00000000...
+13:13:29:769 w ap 0 @0x20000000 : 0x00000004 bytes, Data 0x0000BE00...
+13:13:29:787 w ap 0 @0x20000004 : 0x000007D6 bytes, Data 0xB672B580...
+13:13:29:787 Erasing internal memory sectors [0 127]
+13:13:29:787 Init flashloader...
+13:13:29:788 halt ap 0 
+13:13:29:789 w ap 0 reg 0 R0   0x00000001
+13:13:29:789 w ap 0 reg 1 R1   0x00000000
+13:13:29:790 w ap 0 reg 2 R2   0x00000000
+13:13:29:790 w ap 0 reg 3 R3   0x00000000
+13:13:29:791 w ap 0 reg 4 R4   0x00000000
+13:13:29:791 w ap 0 reg 5 R5   0x00000000
+13:13:29:792 w ap 0 reg 6 R6   0x00000000
+13:13:29:792 w ap 0 reg 7 R7   0x00000000
+13:13:29:792 w ap 0 reg 8 R8   0x00000000
+13:13:29:792 w ap 0 reg 9 R9   0x00000000
+13:13:29:792 w ap 0 reg 10 R10  0x00000000
+13:13:29:792 w ap 0 reg 11 R11  0x00000000
+13:13:29:792 w ap 0 reg 12 R12  0x00000000
+13:13:29:792 w ap 0 reg 13 SP   0x00000000
+13:13:29:792 w ap 0 reg 14 LR   0x20000001
+13:13:29:792 w ap 0 reg 15 PC   0x20000005
+13:13:29:792 w ap 0 reg 16 xPSR 0x01000000
+13:13:29:792 w ap 0 reg 17 MSP  0x20000BD6
+13:13:29:792 w ap 0 reg 18 PSP  0x00000000
+13:13:29:792 run ap 0 
+13:13:29:792 halt ap 0 
+13:13:29:792 r ap 0 reg 0 R0   0x00000001
+13:13:29:792 Loader sector erase...
+13:13:29:792 w ap 0 reg 0 R0   0x08000000
+13:13:29:801 w ap 0 reg 1 R1   0x08007F00
+13:13:29:801 w ap 0 reg 2 R2   0x00000002
+13:13:29:802 w ap 0 reg 3 R3   0x00000000
+13:13:29:802 w ap 0 reg 4 R4   0x00000000
+13:13:29:803 w ap 0 reg 5 R5   0x00000000
+13:13:29:803 w ap 0 reg 6 R6   0x00000000
+13:13:29:804 w ap 0 reg 7 R7   0x00000000
+13:13:29:804 w ap 0 reg 8 R8   0x00000000
+13:13:29:805 w ap 0 reg 9 R9   0x00000000
+13:13:29:805 w ap 0 reg 10 R10  0x00000000
+13:13:29:806 w ap 0 reg 11 R11  0x00000000
+13:13:29:807 w ap 0 reg 12 R12  0x00000000
+13:13:29:807 w ap 0 reg 13 SP   0x00000000
+13:13:29:808 w ap 0 reg 14 LR   0x20000001
+13:13:29:808 w ap 0 reg 15 PC   0x200002BB
+13:13:29:808 w ap 0 reg 16 xPSR 0x01000000
+13:13:29:808 w ap 0 reg 17 MSP  0x20000BD6
+13:13:29:808 w ap 0 reg 18 PSP  0x00000000
+13:13:29:808 run ap 0 
+13:13:30:235 halt ap 0 
+13:13:30:235 r ap 0 reg 0 R0   0x00000001
+13:13:30:235 erase: 0478ms
+13:13:30:235 Download in Progress:
+13:13:30:235   Size          : 32768 Bytes
+13:13:30:235   Address       : 0x08000000
+13:13:30:235 
+
+13:13:30:235 Buffer program...
+13:13:30:247 halt ap 0 
+13:13:30:247 w ap 0 reg 15 PC   (0x20000000)  
+13:13:30:247 w ap 0 reg 17 MSP  (0x20000500)  
+13:13:30:247 w ap 0 reg 16 xPSR (0x01000000)  
+13:13:30:247 w ap 0 @0x20000C00 : 0x00000200 bytes, Data 0x00000000...
+13:13:30:247 w ap 0 @0x20000000 : 0x00000004 bytes, Data 0x0000BE00...
+13:13:30:267 w ap 0 @0x20000004 : 0x000007D6 bytes, Data 0xB672B580...
+13:13:30:267 Loader write range...
+13:13:30:369 w ap 0 @0x20000C00 : 0x00004000 bytes, Data 0x3032303A...
+13:13:30:369 W B1 in RAM @0x20000C00 size 0x00004000 : 0101ms
+13:13:30:369 Init flashloader...
+13:13:30:370 halt ap 0 
+13:13:30:370 w ap 0 reg 0 R0   0x00000001
+13:13:30:371 w ap 0 reg 1 R1   0x00000000
+13:13:30:371 w ap 0 reg 2 R2   0x00000000
+13:13:30:371 w ap 0 reg 3 R3   0x00000000
+13:13:30:371 w ap 0 reg 4 R4   0x00000000
+13:13:30:371 w ap 0 reg 5 R5   0x00000000
+13:13:30:371 w ap 0 reg 6 R6   0x00000000
+13:13:30:371 w ap 0 reg 7 R7   0x00000000
+13:13:30:371 w ap 0 reg 8 R8   0x00000000
+13:13:30:371 w ap 0 reg 9 R9   0x00000000
+13:13:30:371 w ap 0 reg 10 R10  0x00000000
+13:13:30:371 w ap 0 reg 11 R11  0x00000000
+13:13:30:371 w ap 0 reg 12 R12  0x00000000
+13:13:30:371 w ap 0 reg 13 SP   0x00000000
+13:13:30:371 w ap 0 reg 14 LR   0x20000001
+13:13:30:371 w ap 0 reg 15 PC   0x20000005
+13:13:30:371 w ap 0 reg 16 xPSR 0x01000000
+13:13:30:371 w ap 0 reg 17 MSP  0x20000BD6
+13:13:30:371 w ap 0 reg 18 PSP  0x00000000
+13:13:30:371 run ap 0 
+13:13:30:371 halt ap 0 
+13:13:30:371 r ap 0 reg 0 R0   0x00000001
+13:13:30:371 w ap 0 reg 0 R0   0x08000000
+13:13:30:371 w ap 0 reg 1 R1   0x00004000
+13:13:30:371 w ap 0 reg 2 R2   0x20000C00
+13:13:30:384 w ap 0 reg 3 R3   0x00000002
+13:13:30:384 w ap 0 reg 4 R4   0x00000000
+13:13:30:385 w ap 0 reg 5 R5   0x00000000
+13:13:30:385 w ap 0 reg 6 R6   0x00000000
+13:13:30:386 w ap 0 reg 7 R7   0x00000000
+13:13:30:386 w ap 0 reg 8 R8   0x00000000
+13:13:30:387 w ap 0 reg 9 R9   0x00000000
+13:13:30:387 w ap 0 reg 10 R10  0x00000000
+13:13:30:388 w ap 0 reg 11 R11  0x00000000
+13:13:30:389 w ap 0 reg 12 R12  0x00000000
+13:13:30:389 w ap 0 reg 13 SP   0x00000000
+13:13:30:389 w ap 0 reg 14 LR   0x20000001
+13:13:30:390 w ap 0 reg 15 PC   0x20000041
+13:13:30:390 w ap 0 reg 16 xPSR 0x01000000
+13:13:30:391 w ap 0 reg 17 MSP  0x20000BD6
+13:13:30:391 w ap 0 reg 18 PSP  0x00000000
+13:13:30:391 run ap 0 
+13:13:30:491 w ap 0 @0x20004C00 : 0x00004000 bytes, Data 0x46464646...
+13:13:30:491 W B2 in RAM @0x2000A400 size 0x00004000: 0122ms
+13:13:30:846 r ap 0 reg 0 R0   0x00000001
+13:13:30:846 Wait W B1 in Flash @0x08000000 size 0x00004000: 0363ms
+13:13:30:846 w ap 0 reg 0 R0   0x08004000
+13:13:30:846 w ap 0 reg 1 R1   0x00004000
+13:13:30:846 w ap 0 reg 2 R2   0x20004C00
+13:13:30:846 w ap 0 reg 3 R3   0x00000002
+13:13:30:846 w ap 0 reg 4 R4   0x00000000
+13:13:30:846 w ap 0 reg 5 R5   0x00000000
+13:13:30:846 w ap 0 reg 6 R6   0x00000000
+13:13:30:860 w ap 0 reg 7 R7   0x00000000
+13:13:30:860 w ap 0 reg 8 R8   0x00000000
+13:13:30:860 w ap 0 reg 9 R9   0x00000000
+13:13:30:861 w ap 0 reg 10 R10  0x00000000
+13:13:30:861 w ap 0 reg 11 R11  0x00000000
+13:13:30:862 w ap 0 reg 12 R12  0x00000000
+13:13:30:862 w ap 0 reg 13 SP   0x00000000
+13:13:30:862 w ap 0 reg 14 LR   0x20000001
+13:13:30:862 w ap 0 reg 15 PC   0x20000041
+13:13:30:862 w ap 0 reg 16 xPSR 0x01000000
+13:13:30:862 w ap 0 reg 17 MSP  0x20000BD6
+13:13:30:862 w ap 0 reg 18 PSP  0x00000000
+13:13:30:862 run ap 0 
+13:13:31:316 r ap 0 reg 0 R0   0x00000001
+13:13:31:330 Write elapsed time: 1062ms
+13:13:31:330 Sector[0] downloaded successfully
+13:13:31:330 
+
+13:13:31:330 File download complete
+13:13:31:330 Time elapsed during download operation: 00:00:01.565
+13:13:31:330 
+
+
+13:13:31:330 Verifying...
+13:13:31:330 
+
+13:13:31:330 Read progress:
+13:13:31:330 Reading data...
+13:13:31:546 r ap 0 @0x08000000 0x00008000 bytes Data 0x3032303A
+13:13:31:556 
+
+13:13:31:556 Time elapsed during verifying operation: 00:00:00.224
+13:13:31:556 
+
+13:13:31:556 Download verified successfully
+13:13:31:556 
+
+13:13:31:556 Disconnected

@@ -35,6 +35,11 @@ def callTests():
         print(f"Detected Board: '{targetBoard}'")
 
     for stlink in stlinkList:
+      
+        print("STLINK FOUND:")
+        print("  SN =", stlink.serialNumber)
+        print("  BoardName =", stlink.boardName)
+
         cfgFound = None
         print(stlink)
         for cfgFile in getCfgFiles():
@@ -65,13 +70,14 @@ def callTests():
                 with open(cfg_path,"r",encoding="utf-8") as file_object,\
                      open(csv_path,"w") as status_file:
                     lines=file_object.readlines()
-                    for line in lines:
-                     print(line)
-                     if not line.strip() or line.strip().startswith("#"):
-                       continue
-                     paramTestList = getTestParam(line) 
-                     if paramTestList[0]=="FUNC":
-                          if paramTestList[1] == "DNLD":
+                    clean_lines = [l.strip() for l in lines if l.strip() and not l.strip().startswith("#")]
+                    for line_id, line in enumerate(clean_lines, start=1):
+                     paramTestList = getTestParam(line,line_id) 
+                     print(paramTestList)
+                     
+                 
+                     if paramTestList[1]=='FUNC':
+                          if paramTestList[2] == 'DNLD':
                                     testRest = ConnexionSWDwithRST (testIdRst, paramTestList, stlinkList,nbrOfStlink,USBList,nbrOfUSB, JLinkList, nbrOfJLINK, logName)
                                     testIdRst += 1  #ifhem aaleh 9a3din nzidou 
                                     testResult = downloadTest(Int_Prog_Id,paramTestList, stlinkList, nbrOfStlink, USBList, nbrOfUSB, JLinkList, nbrOfJLINK,  logName)

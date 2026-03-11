@@ -1,42 +1,42 @@
-15:03:58:628       -------------------------------------------------------------------
-15:03:58:631                        STM32CubeProgrammer v2.21.0                  
-15:03:58:631       -------------------------------------------------------------------
+13:13:27:173       -------------------------------------------------------------------
+13:13:27:176                        STM32CubeProgrammer v2.21.0                  
+13:13:27:176       -------------------------------------------------------------------
 
-15:03:58:631 
+13:13:27:176 
 
-15:03:58:631 Log output file:   c:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\utils\logListDevices.log
-15:03:58:631 Command line:  --list -log "c:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\utils\logListDevices.log"
-15:03:58:631 
-15:03:58:632 =====  DFU Interface   =====
-15:03:58:642 
-15:03:58:642 No STM32 device in DFU mode connected
-15:03:58:642 
-15:03:58:642 ===== J-Link Interface =====
-15:03:58:645 No J-Link/flasher probe detected.
-15:03:58:645 ===== STLink Interface =====
-15:03:58:665 
+13:13:27:176 Log output file:   c:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\utils\logListDevices.log
+13:13:27:176 Command line:  --list -log "c:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\utils\logListDevices.log"
+13:13:27:176 
+13:13:27:177 =====  DFU Interface   =====
+13:13:27:190 
+13:13:27:190 No STM32 device in DFU mode connected
+13:13:27:190 
+13:13:27:190 ===== J-Link Interface =====
+13:13:27:198 No J-Link/flasher probe detected.
+13:13:27:198 ===== STLink Interface =====
+13:13:27:221 
 -------- Connected ST-LINK Probes List --------
-15:03:58:665 
+13:13:27:221 
 ST-Link Probe 0 :
-15:03:58:665    ST-LINK SN  : 0671FF34314B4E3043234043
-15:03:58:665    ST-LINK FW  : V2J40M27
-15:03:58:665    Access Port Number  : 1
-15:03:58:665    Board Name  : NUCLEO-L152RE
-15:03:58:665 -----------------------------------------------
+13:13:27:221    ST-LINK SN  : 0671FF34314B4E3043234043
+13:13:27:221    ST-LINK FW  : V2J40M27
+13:13:27:221    Access Port Number  : 1
+13:13:27:221    Board Name  : NUCLEO-L152RE
+13:13:27:221 -----------------------------------------------
 
-15:03:58:665 =====  UART Interface  =====
-15:03:58:668 
+13:13:27:221 =====  UART Interface  =====
+13:13:27:228 
 Total number of serial ports available: 2
 
-15:03:58:683 Board Name  : NUCLEO-L152RE
-15:03:58:683 ST-LINK SN: 0671FF34314B4E3043234043
-15:03:58:683 Port: COM6
-15:03:58:683 Location: \\.\COM6
-15:03:58:683 Description: STMicroelectronics STLink Virtual COM Port
-15:03:58:683 Manufacturer: STMicroelectronics
+13:13:27:244 Board Name  : NUCLEO-L152RE
+13:13:27:244 ST-LINK SN: 0671FF34314B4E3043234043
+13:13:27:244 Port: COM6
+13:13:27:244 Location: \\.\COM6
+13:13:27:244 Description: STMicroelectronics STLink Virtual COM Port
+13:13:27:244 Manufacturer: STMicroelectronics
 
-15:03:58:683 Port: COM1
-15:03:58:683 Location: \\.\COM1
-15:03:58:683 Description: Port de communication
-15:03:58:683 Manufacturer: (Types de port standard)
+13:13:27:244 Port: COM1
+13:13:27:244 Location: \\.\COM1
+13:13:27:244 Description: Port de communication
+13:13:27:244 Manufacturer: (Types de port standard)
 

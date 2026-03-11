@@ -6,34 +6,38 @@ import time
 sys.path.append(str(Path(__file__).parent.parent))
 
 from utils.cfgParser import checkDeviceConnexion
+from utils.CMDOs import get_cli_command
 
 def ConnexionSWDwithRST (testIdRst, paramTestList, stlinkList,nbrOfStlink,USBList,nbrOfUSB, JLinkList, nbrOfJLINK, logName):
-       
- CATEGORY = paramTestList[0]
- TEST_TYPE = paramTestList[1]
- FAMILY = paramTestList[2]
- FILE = paramTestList[3]
- ADDRESS = paramTestList[4]
- BIN_DIR = paramTestList[5]
- RESET = paramTestList[6]
- PORT_NAME = paramTestList[7]
- SN = paramTestList[8]
- SECTORS = paramTestList[9]
- INTERFACE = paramTestList[10]
+ TEST_ID   = paramTestList[0]
+ CATEGORY  = paramTestList[1]
+ TEST_TYPE = paramTestList[2]
+ FAMILY    = paramTestList[3]
+ FILE      = paramTestList[4]
+ ADDRESS   = paramTestList[5]
+ BIN_DIR   = paramTestList[6]
+ RESET     = paramTestList[7]
+ PORT_NAME = paramTestList[8]
+ SN        = paramTestList[9]
+ SECTORS   = paramTestList[10]
+ INTERFACE = paramTestList[11]
  isConnected=checkDeviceConnexion(SN, INTERFACE, stlinkList, nbrOfStlink, USBList, nbrOfUSB, JLinkList, nbrOfJLINK)
- print(isConnected)
  if isConnected!=1:
   return 0
  
- CMD = "STM32_Programmer_CLI" 
+ CMD =get_cli_command()
+ print('notre commande est  ')
+ print(CMD)
  reset_cmd = [
         CMD,
         "-c", f"port={PORT_NAME}", f"sn={SN}", "reset=HWrst"
     ]
-
+ print("hello from the moon")
  try:
         subprocess.run(reset_cmd, check=True)
+
         time.sleep(1)
+      
  except Exception:
         return 0 
  
@@ -72,20 +76,22 @@ def checkFileType(FILE):
     return getAdd
 
 def downloadTest (Int_Prog_Id, paramTestList, stlinkList, nbrOfStlink, USBList, nbrOfUSB, JLinkList, nbrOfJLINK,logName):
+    TEST_ID      = paramTestList[0]
+    CATEGORY     = paramTestList[1]
+    TEST_TYPE    = paramTestList[2]
+    FAMILY       = paramTestList[3]
+    FILE         = paramTestList[4]
+    ADDRESS      = paramTestList[5]
+    BIN_DIR      = paramTestList[6]
+    RESET        = paramTestList[7]
+    PORT_NAME    = paramTestList[8]
+    SN           = paramTestList[9]
+    SECTORS      = paramTestList[10]
+    INTERFACE    = paramTestList[11]
 
-    CATEGORY = paramTestList[0]
-    TEST_TYPE = paramTestList[1]
-    FAMILY = paramTestList[2]
-    FILE = paramTestList[3]
-    ADDRESS = paramTestList[4]
-    BIN_DIR = paramTestList[5]
-    RESET = paramTestList[6]
-    PORT_NAME = paramTestList[7]
-    SN = paramTestList[8]
-    SECTORS = paramTestList[9]
-    INTERFACE = paramTestList[10]
-    SNV3 = paramTestList[16]
-    SLAVEADDRESS = paramTestList[17]
+    # On décale aussi la fin
+    SNV3         = paramTestList[17]
+    SLAVEADDRESS = paramTestList[18]
 
     testStatus = 0
     execution_time = 0 
@@ -100,7 +106,7 @@ def downloadTest (Int_Prog_Id, paramTestList, stlinkList, nbrOfStlink, USBList, 
     if isconnected != 1:
         return 0
 
-    CMD = "STM32_Programmer_CLI"
+    CMD = get_cli_command()
 
     # ----- reset -----
     reset_cmd = [

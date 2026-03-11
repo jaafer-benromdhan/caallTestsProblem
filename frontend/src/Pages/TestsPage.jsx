@@ -4,22 +4,33 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import BoardSection from "../components/BoardSection";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
-
 export default function TestsPage() {
-  const [boards, setBoards] = useState({});           // { C031: [...], F411: [...], ... }
+  const [boards, setBoards] = useState({});
   const [selectedBoard, setSelectedBoard] = useState("ALL");
   const [search, setSearch] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  // -------------------------------
+  // 📌 GET TEST SUITES (avec console log)
+  // -------------------------------
   useEffect(() => {
     api.get("/testsuites").then(res => {
       setBoards(res.data || {});
+      console.log("📌 Tests reçus depuis backend :", res.data);  // AJOUT
     });
   }, []);
 
-  const runTest = (test) => {
-    api.post("/run_test", test);
-  };
+  // -------------------------------
+  // 📌 RUN TEST (boardKey + line_id)
+  // -------------------------------
+  async function runTest(boardKey, line_id) {
+    try {
+      const response = await api.post("/run_test", { boardKey, line_id });
+      console.log("Résultat :", response.data);
+    } catch (err) {
+      console.error("Erreur dans runTest:", err);
+    }
+  }
 
   const runAllInBoard = () => {
     const list =
@@ -27,7 +38,7 @@ export default function TestsPage() {
         ? Object.values(boards).flat()
         : boards[selectedBoard] || [];
     if (!list.length) return;
-    // Exécution séquentielle simple (tu peux paralléliser si besoin)
+
     list.forEach(t => api.post("/run_test", t));
   };
 
@@ -47,15 +58,10 @@ export default function TestsPage() {
   }, [filteredBoardKeys, selectedBoard]);
 
   return (
-    <div className="min-h-screen  bg-slate-900 flex">
-      {/* SIDEBAR (desktop & mobile via overlay) */}
-     
+    <div className="min-h-screen bg-slate-900 flex">
 
-      {/* MAIN CONTENT */}
       <div className="flex-1 min-w-0 ">
-        {/* Topbar */}
-        <div className="sticky   top-0  z-20  border-b  px-4 sm:px-6 py-3 flex items-center gap-3">
-          {/* Hamburger for mobile */}
+        <div className="sticky top-0 z-20 border-b px-4 sm:px-6 py-3 flex items-center gap-3">
           <button
             className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100"
             onClick={() => setSidebarOpen(true)}
@@ -64,15 +70,13 @@ export default function TestsPage() {
             <Bars3Icon className="w-6 h-6 text-gray-700" />
           </button>
 
-          <div className="flex-1  flex items-center justify-between ">
+          <div className="flex-1 flex items-center justify-between ">
             <h1 className="text-2xl sm:text-3xl text-white font-bold tracking-tight">
               Configured Tests
             </h1>
-
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-4 sm:p-6 space-y-6">
           {visibleBoards.length === 0 && (
             <div className="text-gray-500">Aucun board à afficher.</div>
@@ -87,7 +91,6 @@ export default function TestsPage() {
             />
           ))}
 
-          {/* Bouton Run All aussi en bas pour mobile */}
           <div className="sm:hidden sticky bottom-4 flex justify-end pr-2">
             <button
               onClick={runAllInBoard}

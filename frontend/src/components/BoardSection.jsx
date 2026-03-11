@@ -31,7 +31,7 @@ export default function BoardSection({ name, tests, onRun }) {
       {/* CONTENT */}
       {open && (
         <div className="p-4 bg-gray-900 border-t border-gray-700 rounded-b-xl">
-          <TestsTable boards={tests} onRun={onRun} />
+           <TestsTable boardName={name} boards={tests} onRun={onRun} />
         </div>
       )}
     </div>

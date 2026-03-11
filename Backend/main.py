@@ -12,7 +12,7 @@ app = FastAPI(title="Test Suites API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # ton front
+    allow_origins=["http://localhost:5173"], 
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -31,16 +31,14 @@ class TestItem(BaseModel):
 # ---------------------------
 # Parsing des .cfg
 # ---------------------------
-CFG_DIR = r"C:\Users\jbenromd\Desktop\actia001-main\backend\cfgFiles"
+
+from pathlib import Path
+
+CFG_DIR = Path(__file__).resolve().parent / "cfgFiles"
+
 
 def parse_cfg_files() -> Dict[str, List[dict]]:
-    """
-    Lit tous les .cfg du dossier et renvoie:
-    {
-      "BoardName1": [ {test_object}, ... ],
-      "BoardName2": [ ... ]
-    }
-    """
+   
     if not os.path.isdir(CFG_DIR):
         raise FileNotFoundError(f"Dossier introuvable: {CFG_DIR}")
 
@@ -48,7 +46,8 @@ def parse_cfg_files() -> Dict[str, List[dict]]:
     boards: Dict[str, List[dict]] = {}
 
     for cfg_file in cfg_files:
-        board_name = cfg_file.replace(".cfg", "").replace("testDescription", "")
+        print(cfg_file)
+        board_name = cfg_file.replace(".cfg", "")
         boards[board_name] = []
 
         full_path = os.path.join(CFG_DIR, cfg_file)
@@ -195,6 +194,74 @@ def get_latest_report():
     }
 
 
+
+ # modèle reçu depuis le front 
+class RunPayload(BaseModel):
+    boardKey: str
+    line_id: int
+
+
+@app.post("/run_test")
+def run_test(payload: RunPayload):
+
+    board = payload.boardKey
+    line_id = payload.line_id
+
+    # Vérifier le cfg
+    cfg_name = f"{board}.cfg"
+    cfg_path = CFG_DIR / cfg_name
+
+    if not cfg_path.exists():
+        raise HTTPException(status_code=404, detail=f"CFG introuvable: {cfg_name}")
+
+    # Lire et filtrer les lignes comme ton frontend (ignore # et vides)
+    with open(cfg_path, "r", encoding="utf-8", errors="ignore") as f:
+        raw_lines = f.readlines()
+
+    clean_lines = [
+        l.strip() for l in raw_lines 
+        if l.strip() and not l.strip().startswith("#")
+    ]
+
+    # Vérifier que line_id existe
+    if line_id < 1 or line_id > len(clean_lines):
+        raise HTTPException(status_code=400, detail="line_id hors limites")
+
+    selected_line = clean_lines[line_id - 1]
+
+    # Transformer en paramTestList
+    param = selected_line.split()
+
+    # Capture du stdout (logs)
+    old_stdout = sys.stdout
+    sys.stdout = buffer = io.StringIO()
+
+    try:
+        print(f"▶ Exécution board={board}, line_id={line_id}")
+        print(f"▶ Ligne CFG : {selected_line}")
+
+        # ICI tu mets ce que tu veux exécuter : 
+        # Pour l’instant, un mock SIMPLE (pas de STLINK/JLINK encore)
+
+        print("Simulation du test... OK")
+
+    except Exception as e:
+        print("❌ ERREUR :", str(e))
+
+    finally:
+        sys.stdout = old_stdout
+
+    logs = buffer.getvalue()
+
+    return {
+        "status": "done",
+        "board": board,
+        "line_id": line_id,
+        "log": logs,
+    }
+
+
 if __name__ == "__main__":
   
     uvicorn.run(app, host="0.0.0.0", port=8000)
+  #parse_cfg_files() 

@@ -1,0 +1,29 @@
+13:13:32:721       -------------------------------------------------------------------
+13:13:32:737                        STM32CubeProgrammer v2.21.0                  
+13:13:32:737       -------------------------------------------------------------------
+
+13:13:32:737 
+
+13:13:32:737 Log output file:   C:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\logFiles\_NUCLEO-L152RE\logRST1.log
+13:13:32:737 Command line:  -c port=SWD sn=0671ff34314b4e3043234043 reset=hwrst -log "C:\Users\jbenromd\Desktop\stm32cubeprogrammer-main\Backend\logFiles\_NUCLEO-L152RE\logRST1.log"
+13:13:32:737 
+13:13:32:757 ST-LINK SN  : 0671FF34314B4E3043234043
+13:13:32:757 ST-LINK FW  : V2J40M27
+13:13:32:758 Board       : NUCLEO-L152RE
+13:13:32:758 Voltage     : 3.26V
+13:13:32:758 SWD freq    : 4000 KHz
+13:13:32:758 Connect mode: Under Reset
+13:13:32:758 Reset mode  : Hardware reset
+13:13:32:768 Device ID   : 0x437
+13:13:32:770 Revision ID : Rev Z
+13:13:32:774 flash loader C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/FlashLoader/0x437.stldr is loaded
+13:13:32:774 Device name : STM32L15xxE/STM32L162xE
+13:13:32:774 Reading data...
+13:13:32:774 r ap 0 @0x1FF800CC 0x00000004 bytes Data 0x00000200
+13:13:32:774 Flash size  : 512 KBytes
+13:13:32:774 Device type : MCU
+13:13:32:774 Device CPU  : Cortex-M3
+13:13:32:783 BL Version  : 0x40
+13:13:32:784 Debug in Low Power mode enabled
+13:13:32:785 
+13:13:32:788 Disconnected
